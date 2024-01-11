@@ -14,7 +14,6 @@
 
     <title>Frontend Mentor | Todo app</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="darkMode.css" />
   </head>
   <body>
     <header>
@@ -25,20 +24,91 @@
     </header>
     <main>
       <form action="/" id="form" name="todo-form">
-        <div>
-          <label for="checkbox">checkbox</label>
+        <div class="checkbox-div">
+          <label for="checkbox" class="label">checkbox</label>
           <input type="checkbox" id="checkbox" class="checkbox-round" />
         </div>
         <div>
-          <label for="todo">todo</label>
+          <label for="todo" class="label">todo</label>
           <input type="text" placeholder="Create a new todo..." id="todo" />
         </div>
       </form>
+      <div class="todo-items">
+        <div class="empty-message hide">Nothing to do. Add todo....</div>
+        <ul>
+          <li class="todo-item">
+            <div class="checkbox-div">
+              <label for="checkbox1" class="label">checkbox</label>
+              <input type="checkbox" id="checkbox1" class="checkbox-round" />
+              <p class="todo-text">Study React</p>
+            </div>
+            <button type="button">
+              <img src="images/icon-cross.svg" alt="delete todo item" />
+            </button>
+          </li>
+          <li class="todo-item">
+            <div class="checkbox-div">
+              <label for="checkbox1" class="label">checkbox</label>
+              <input type="checkbox" id="checkbox1" class="checkbox-round" />
+              <p class="todo-text">Study React</p>
+            </div>
+            <button type="button">
+              <img src="images/icon-cross.svg" alt="delete todo item" />
+            </button>
+          </li>
+          <li class="todo-item">
+            <div class="checkbox-div">
+              <label for="checkbox1" class="label">checkbox</label>
+              <input type="checkbox" id="checkbox1" class="checkbox-round" />
+              <p class="todo-text">Study React</p>
+            </div>
+            <button type="button">
+              <img src="images/icon-cross.svg" alt="delete todo item" />
+            </button>
+          </li>
+          <li class="todo-item">
+            <div class="checkbox-div">
+              <label for="checkbox1" class="label">checkbox</label>
+              <input type="checkbox" id="checkbox1" class="checkbox-round" />
+              <p class="todo-text">Study React</p>
+            </div>
+            <button type="button">
+              <img src="images/icon-cross.svg" alt="delete todo item" />
+            </button>
+          </li>
+          <li class="todo-item">
+            <div class="checkbox-div">
+              <label for="checkbox1" class="label">checkbox</label>
+              <input type="checkbox" id="checkbox1" class="checkbox-round" />
+              <p class="todo-text">Study React</p>
+            </div>
+            <button type="button">
+              <img src="images/icon-cross.svg" alt="delete todo item" />
+            </button>
+          </li>
+          <li class="todo-item">
+            <div class="checkbox-div">
+              <label for="checkbox1" class="label">checkbox</label>
+              <input type="checkbox" id="checkbox1" class="checkbox-round" />
+              <p class="todo-text">Study React</p>
+            </div>
+            <button type="button">
+              <img src="images/icon-cross.svg" alt="delete todo item" />
+            </button>
+          </li>
+        </ul>
+        <div class="status-div">
+          <p><span data-counter>0</span> items left</p>
+          <button type="button">Clear Completed</button>
+        </div>
+      </div>
+      <div class="status-div__middle-div">
+        <button type="button">All</button>
+        <button type="button">Active</button>
+        <button type="button">Completed</button>
+      </div>
 
-      <!-- <div>items left Clear Completed</div>
-      <div>All Active Completed</div>
-  
-      <div>Drag and drop to reorder list</div> -->
+      <div class="drag-drop-div">Drag and drop to reorder list</div>
     </main>
 
     <script src="main.js"></script>
