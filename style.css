@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+  /* ### Light Theme */
+
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* ### Dark Theme */
+
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue: hsl(236, 33%, 92%); /*(hover)*/
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.125rem;
+  min-height: 100vh;
+  margin: 2.9rem 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 9px;
+  color: var(--Very-Light-Gray);
+}
+
+header button {
+  border: none;
+  background-color: transparent;
+}
+header img {
+  width: 20px;
+  display: block;
+}
+
+main {
+  margin-top: 2rem;
+}
+
+form {
+  width: 100%;
+  border-radius: 6px;
+  background-color: #25273c;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1.2rem;
+}
+
+form div:first-child {
+  display: flex;
+}
+
+label {
+  position: absolute;
+  left: -9999px;
+}
+input#todo {
+  width: 100%;
+  color: #999bb2;
+  background-color: transparent;
+  border: none;
+  padding: 1rem 2rem 1rem 1rem;
+  outline: none;
+}
+
+.checkbox-round {
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid #5d5f74;
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"]::before {
+  content: url("images/icon-check.svg");
+  display: none;
+  position: absolute;
+  text-align: center;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  left: -1px;
+  top: -1px;
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+input[type="checkbox"]:checked::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

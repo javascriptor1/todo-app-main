@@ -13,15 +13,33 @@
     />
 
     <title>Frontend Mentor | Todo app</title>
-
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="darkMode.css" />
   </head>
   <body>
-    Todo
+    <header>
+      <h1>Todo</h1>
+      <button type="button">
+        <img src="images/icon-sun.svg" alt="Light mode" />
+      </button>
+    </header>
+    <main>
+      <form action="/" id="form" name="todo-form">
+        <div>
+          <label for="checkbox">checkbox</label>
+          <input type="checkbox" id="checkbox" class="checkbox-round" />
+        </div>
+        <div>
+          <label for="todo">todo</label>
+          <input type="text" placeholder="Create a new todo..." id="todo" />
+        </div>
+      </form>
 
-    <!-- Add dynamic number -->
-    items left All Active Completed Clear Completed Drag and drop to reorder
-    list
+      <!-- <div>items left Clear Completed</div>
+      <div>All Active Completed</div>
+  
+      <div>Drag and drop to reorder list</div> -->
+    </main>
 
     <script src="main.js"></script>
   </body>
