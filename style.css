@@ -201,7 +201,7 @@ input[type="checkbox"]:checked::after {
   padding: 1rem 1.2rem;
   border-bottom: 1px solid var(--Dark-Grayish-Blue);
 }
-/* This styling will prevent page to move when image appear when hovering over it 
+/* This styling will prevent page to move when cross image appear after hovering over it. 
  by setting fixed height , The content will not move- nice trick 😉 */
 .todo-item button {
   height: 1rem;
@@ -240,3 +240,4 @@ input[type="checkbox"]:checked::after {
 .todo-item:hover {
   cursor: pointer;
 }
+
