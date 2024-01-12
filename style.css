@@ -82,6 +82,13 @@ form {
   justify-content: flex-start;
   padding-left: 1.2rem;
 }
+.todo-div {
+  flex: 5;
+}
+
+input[disabled] {
+  cursor: not-allowed;
+}
 
 .checkbox-div {
   display: flex;
@@ -119,7 +126,7 @@ input#todo {
   text-decoration: line-through;
   color: #404153;
 }
-input[type="checkbox"]::before {
+.todo-item [type="checkbox"]::before {
   content: url("images/icon-check.svg");
   display: none;
   position: absolute;
@@ -148,6 +155,7 @@ input[type="checkbox"]:hover::before {
   justify-content: center;
   align-items: center;
 }
+
 input[type="checkbox"]:checked::before {
   display: flex;
   justify-content: center;
@@ -187,7 +195,9 @@ input[type="checkbox"]:checked::after {
   font-size: 14px;
 }
 .status-div__middle-div button:focus,
-.status-div__middle-div--flex button:focus {
+.status-div__middle-div--flex button:focus,
+.status-div__middle-div--flex button:active
+ {
   color: var(--Bright-Blue);
 }
 .todo-items {
@@ -282,6 +292,6 @@ input[type="checkbox"]:checked::after {
   }
   .status-div__middle-div--flex button:hover,
   .status-div button:hover {
-    color: var( --Light-Grayish-Blue);
+    color: var(--Light-Grayish-Blue);
   }
 }
