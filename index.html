@@ -27,7 +27,12 @@
         <form action="/" id="form" name="todo-form">
           <div class="checkbox-div">
             <label for="checkbox" class="label">checkbox</label>
-            <input type="checkbox" id="checkbox" class="checkbox-round" disabled/>
+            <input
+              type="checkbox"
+              id="checkbox"
+              class="checkbox-round"
+              disabled
+            />
           </div>
           <div class="todo-div">
             <label for="todo" class="label">todo</label>
@@ -35,69 +40,8 @@
           </div>
         </form>
         <div class="todo-items">
-          <div class="empty-message hide">Nothing to do. Add todo....</div>
-          <ul>
-            <li class="todo-item">
-              <div class="checkbox-div">
-                <label for="checkbox1" class="label">checkbox</label>
-                <input type="checkbox" id="checkbox1" class="checkbox-round" />
-                <p class="todo-text">Study React</p>
-              </div>
-              <button type="button">
-                <img src="images/icon-cross.svg" alt="delete todo item" />
-              </button>
-            </li>
-            <li class="todo-item">
-              <div class="checkbox-div">
-                <label for="checkbox1" class="label">checkbox</label>
-                <input type="checkbox" id="checkbox1" class="checkbox-round" />
-                <p class="todo-text">Study React</p>
-              </div>
-              <button type="button">
-                <img src="images/icon-cross.svg" alt="delete todo item" />
-              </button>
-            </li>
-            <li class="todo-item">
-              <div class="checkbox-div">
-                <label for="checkbox1" class="label">checkbox</label>
-                <input type="checkbox" id="checkbox1" class="checkbox-round" />
-                <p class="todo-text">Study React</p>
-              </div>
-              <button type="button">
-                <img src="images/icon-cross.svg" alt="delete todo item" />
-              </button>
-            </li>
-            <li class="todo-item">
-              <div class="checkbox-div">
-                <label for="checkbox1" class="label">checkbox</label>
-                <input type="checkbox" id="checkbox1" class="checkbox-round" />
-                <p class="todo-text">Study React</p>
-              </div>
-              <button type="button">
-                <img src="images/icon-cross.svg" alt="delete todo item" />
-              </button>
-            </li>
-            <li class="todo-item">
-              <div class="checkbox-div">
-                <label for="checkbox1" class="label">checkbox</label>
-                <input type="checkbox" id="checkbox1" class="checkbox-round" />
-                <p class="todo-text">Study React</p>
-              </div>
-              <button type="button">
-                <img src="images/icon-cross.svg" alt="delete todo item" />
-              </button>
-            </li>
-            <li class="todo-item">
-              <div class="checkbox-div">
-                <label for="checkbox1" class="label">checkbox</label>
-                <input type="checkbox" id="checkbox1" class="checkbox-round" />
-                <p class="todo-text">Study React</p>
-              </div>
-              <button type="button">
-                <img src="images/icon-cross.svg" alt="delete todo item" />
-              </button>
-            </li>
-          </ul>
+          <div class="empty-message">Nothing to do. Add todo....</div>
+          <ul class="todosList"></ul>
           <div class="status-div">
             <p><span data-counter>0</span> items left</p>
             <div class="middle-div"></div>

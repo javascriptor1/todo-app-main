@@ -39,6 +39,10 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 26.3%;
 }
+.container {
+  max-width: 550px;
+  margin: 0 auto;
+}
 
 header {
   display: flex;
@@ -196,8 +200,7 @@ input[type="checkbox"]:checked::after {
 }
 .status-div__middle-div button:focus,
 .status-div__middle-div--flex button:focus,
-.status-div__middle-div--flex button:active
- {
+.status-div__middle-div--flex button:active {
   color: var(--Bright-Blue);
 }
 .todo-items {
@@ -261,10 +264,8 @@ input[type="checkbox"]:checked::after {
 
 @media (min-width: 768px) {
   .container {
-    width: 550px;
-    margin: 0 auto;
-    position: relative;
-    left: 10px;
+    /* position: relative;
+    left: 10px; */
   }
   header {
     margin-top: 5rem;
