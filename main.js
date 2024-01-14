@@ -14,6 +14,8 @@ const emptyMsg = document.querySelector(".empty-message");
 const clearCompleteBtn = document.querySelector(".status-div button");
 const filterBtns = document.querySelectorAll(".status-div__middle-div button");
 let filterBtnsLargeScreens;
+const lightModeTag = document.getElementById("lightMode");
+const themeSwitcherBtn = document.querySelector("header button");
 
 // ************************************************************************************/
 //                                  Application functions
@@ -210,6 +212,29 @@ function swapTodos(fromIndex, toIndex) {
   displayTodo(todoArray);
 }
 
+function changeTheme(e) {
+  if (
+    e.currentTarget.firstElementChild.getAttribute("src") ===
+    "images/icon-sun.svg"
+  ) {
+    e.currentTarget.firstElementChild.setAttribute(
+      "src",
+      "images/icon-moon.svg"
+    );
+    lightModeTag.setAttribute('href','lightMode.css')
+
+
+  } else if (
+    e.currentTarget.firstElementChild.getAttribute("src") ===
+    "images/icon-moon.svg"
+  ) {
+    e.currentTarget.firstElementChild.setAttribute(
+      "src",
+      "images/icon-sun.svg"
+    );
+    lightModeTag.removeAttribute('href','lightMode.css')
+  }
+}
 // application functionality [event listeners]
 window.addEventListener("resize", initializeFilterDiv);
 window.addEventListener("resize", removeFilterDiv);
@@ -228,7 +253,7 @@ filterBtns.forEach((element) => {
 filterBtnsLargeScreens.forEach((element) => {
   element.addEventListener("click", filterTodo);
 });
-
+themeSwitcherBtn.addEventListener("click", changeTheme);
 function init() {
   todoInputEl.focus();
 }

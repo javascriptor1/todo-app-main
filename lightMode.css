@@ -1,0 +1,39 @@
+body {
+  background-color: #fafafa;
+}
+
+form {
+  background-color: var(--Very-Light-Gray);
+}
+input[type="checkbox"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  left: 1px;
+  top: 1px;
+  background: var(--Very-Light-Gray);
+}
+
+.todo-items {
+  background-color: var(--Very-Light-Gray);
+}
+
+:is(.empty-message, .todo-text) {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-size: 0.7em;
+}
+
+.drag-drop-div {
+  color: #bcbcc3;
+
+  background-color: #fafafa;
+}
+
+.status-div__middle-div--flex button:hover,
+.status-div button:hover {
+  color: #3a3d50;
+}

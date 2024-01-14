@@ -252,20 +252,16 @@ input[type="checkbox"]:checked::after {
   font-size: 12px;
 }
 
-.todo-item:hover {
-  cursor: pointer;
-}
-
 .todo-item:hover > button {
+  cursor: pointer;
   display: block;
 }
 .draggable {
   background-color: #5742c156;
- 
 }
-
-.mouse {
-  cursor: move;
+.status-div__middle-div--flex button:hover,
+.status-div button:hover {
+  color: var(--Light-Grayish-Blue);
 }
 
 /* Desktop design */
@@ -298,9 +294,5 @@ input[type="checkbox"]:checked::after {
     display: flex;
     gap: 1rem;
     font-weight: 700;
-  }
-  .status-div__middle-div--flex button:hover,
-  .status-div button:hover {
-    color: var(--Light-Grayish-Blue);
   }
 }
