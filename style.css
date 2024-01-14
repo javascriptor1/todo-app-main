@@ -259,6 +259,14 @@ input[type="checkbox"]:checked::after {
 .todo-item:hover > button {
   display: block;
 }
+.draggable {
+  background-color: #5742c156;
+ 
+}
+
+.mouse {
+  cursor: move;
+}
 
 /* Desktop design */
 
