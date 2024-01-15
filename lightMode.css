@@ -24,7 +24,7 @@ input[type="checkbox"]::after {
 
 :is(.empty-message, .todo-text) {
   color: var(--Very-Dark-Grayish-Blue);
-  font-size: 0.7em;
+  font-size: 1em;
 }
 
 .drag-drop-div {
