@@ -8,7 +8,7 @@ const middleStatusDiv = document
 const form = document.getElementById("form");
 const todoInputEl = document.getElementById("todo");
 const todoList = document.querySelector(".todosList");
-let todoArray = [];
+let todoArray = JSON.parse(localStorage.getItem('todos')) || [];
 const counterSpanEl = document.querySelector("[data-counter]");
 const emptyMsg = document.querySelector(".empty-message");
 const clearCompleteBtn = document.querySelector(".status-div button");
@@ -94,11 +94,12 @@ function addTodo(e) {
     todoStatus,
   });
 
-  todoInputEl.value = "";
-
+  
   displayTodo(todoArray);
   handleEmptyMessage();
   getTodoCount();
+  saveToLocalStorage(todoArray)
+  todoInputEl.value = "";
 }
 
 function removeTodo(e) {
@@ -114,6 +115,7 @@ function removeTodo(e) {
     handleEmptyMessage();
     getTodoCount();
   } else return;
+  saveToLocalStorage(todoArray)
 }
 
 function handleEmptyMessage() {
@@ -140,12 +142,14 @@ function updateTodoStatus(event) {
     }
   });
   getTodoCount();
+  saveToLocalStorage(todoArray)
 }
 
 function clearCompleted() {
   todoArray = todoArray.filter((element) => element.todoStatus === false);
   displayTodo(todoArray);
   getTodoCount();
+  saveToLocalStorage(todoArray)
 }
 
 function filterTodo(event) {
@@ -208,6 +212,7 @@ function swapTodos(fromIndex, toIndex) {
     todoArray[fromIndex],
   ];
   displayTodo(todoArray);
+  saveToLocalStorage(todoArray)
 }
 
 function changeTheme(e) {
@@ -231,6 +236,10 @@ function changeTheme(e) {
     lightModeTag.removeAttribute("href", "lightMode.css");
   }
 }
+
+function saveToLocalStorage(todo){
+localStorage.setItem('todos',JSON.stringify(todo))
+}
 // application functionality [event listeners]
 window.addEventListener("resize", initializeFilterDiv);
 window.addEventListener("resize", removeFilterDiv);
@@ -250,8 +259,11 @@ filterBtnsLargeScreens.forEach((element) => {
   element.addEventListener("click", filterTodo);
 });
 themeSwitcherBtn.addEventListener("click", changeTheme);
+
+
 function init() {
   todoInputEl.focus();
+  displayTodo(todoArray)
 }
 
 init();
