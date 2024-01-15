@@ -166,11 +166,9 @@ function filterTodo(event) {
       (element) => element.todoStatus === true
     ).length;
 
-    if (itemsCount === 0) {
-      alert("No completed items found 🤚");
-    } else {
-      displayTodo(todoArray.filter((element) => element.todoStatus === true));
-    }
+    itemsCount === 0
+      ? alert("No completed items found 🤚")
+      : displayTodo(todoArray.filter((element) => element.todoStatus === true));
   }
 }
 
@@ -221,9 +219,7 @@ function changeTheme(e) {
       "src",
       "images/icon-moon.svg"
     );
-    lightModeTag.setAttribute('href','lightMode.css')
-
-
+    lightModeTag.setAttribute("href", "lightMode.css");
   } else if (
     e.currentTarget.firstElementChild.getAttribute("src") ===
     "images/icon-moon.svg"
@@ -232,7 +228,7 @@ function changeTheme(e) {
       "src",
       "images/icon-sun.svg"
     );
-    lightModeTag.removeAttribute('href','lightMode.css')
+    lightModeTag.removeAttribute("href", "lightMode.css");
   }
 }
 // application functionality [event listeners]
