@@ -9,6 +9,8 @@ const form = document.getElementById("form");
 const todoInputEl = document.getElementById("todo");
 const todoList = document.querySelector(".todosList");
 let todoArray = JSON.parse(localStorage.getItem("todos")) || [];
+let icon = document.getElementById("icon");
+let styleSheet = localStorage.getItem("styleSheet") || "";
 let theme = localStorage.getItem("theme") || "images/icon-sun.svg";
 const counterSpanEl = document.querySelector("[data-counter]");
 const emptyMsg = document.querySelector(".empty-message");
@@ -229,6 +231,7 @@ function changeTheme(e) {
     );
     lightModeTag.setAttribute("href", "lightMode.css");
     localStorage.setItem("theme", "images/icon-moon.svg");
+    localStorage.setItem("styleSheet", "lightMode.css");
   } else if (
     e.currentTarget.firstElementChild.getAttribute("src") ===
     "images/icon-moon.svg"
@@ -239,11 +242,17 @@ function changeTheme(e) {
     );
     lightModeTag.removeAttribute("href", "lightMode.css");
     localStorage.setItem("theme", "images/icon-sun.svg");
+    localStorage.setItem("styleSheet", "");
   }
 }
 
 function saveToLocalStorage(todo) {
   localStorage.setItem("todos", JSON.stringify(todo));
+}
+
+function loadTheme(icon, styleSheet) {
+  icon.setAttribute('src',theme);
+  lightModeTag.setAttribute('href',styleSheet);
 }
 // application functionality [event listeners]
 window.addEventListener("resize", initializeFilterDiv);
@@ -264,6 +273,7 @@ filterBtns.forEach((element) => {
 themeSwitcherBtn.addEventListener("click", changeTheme);
 
 function init() {
+  loadTheme(icon,styleSheet );
   todoInputEl.focus();
   displayTodo(todoArray);
 }
