@@ -10,8 +10,8 @@ input[type="checkbox"]::after {
   display: block;
   position: absolute;
   text-align: center;
-  width: 1.2em;
-  height: 1.2em;
+  width: 1.6em;
+  height: 1.6em;
   border-radius: 50%;
   left: 1px;
   top: 1px;
