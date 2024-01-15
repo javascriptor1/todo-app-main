@@ -8,7 +8,8 @@ const middleStatusDiv = document
 const form = document.getElementById("form");
 const todoInputEl = document.getElementById("todo");
 const todoList = document.querySelector(".todosList");
-let todoArray = JSON.parse(localStorage.getItem('todos')) || [];
+let todoArray = JSON.parse(localStorage.getItem("todos")) || [];
+let theme = localStorage.getItem("theme") || "images/icon-sun.svg";
 const counterSpanEl = document.querySelector("[data-counter]");
 const emptyMsg = document.querySelector(".empty-message");
 const clearCompleteBtn = document.querySelector(".status-div button");
@@ -34,6 +35,9 @@ function initializeFilterDiv() {
     filterBtnsLargeScreens = document.querySelectorAll(
       ".status-div__middle-div--flex button"
     );
+    filterBtnsLargeScreens.forEach((element) => {
+      element.addEventListener("click", filterTodo);
+    });
   }
 }
 
@@ -94,11 +98,10 @@ function addTodo(e) {
     todoStatus,
   });
 
-  
   displayTodo(todoArray);
   handleEmptyMessage();
   getTodoCount();
-  saveToLocalStorage(todoArray)
+  saveToLocalStorage(todoArray);
   todoInputEl.value = "";
 }
 
@@ -115,7 +118,7 @@ function removeTodo(e) {
     handleEmptyMessage();
     getTodoCount();
   } else return;
-  saveToLocalStorage(todoArray)
+  saveToLocalStorage(todoArray);
 }
 
 function handleEmptyMessage() {
@@ -142,14 +145,14 @@ function updateTodoStatus(event) {
     }
   });
   getTodoCount();
-  saveToLocalStorage(todoArray)
+  saveToLocalStorage(todoArray);
 }
 
 function clearCompleted() {
   todoArray = todoArray.filter((element) => element.todoStatus === false);
   displayTodo(todoArray);
   getTodoCount();
-  saveToLocalStorage(todoArray)
+  saveToLocalStorage(todoArray);
 }
 
 function filterTodo(event) {
@@ -212,7 +215,7 @@ function swapTodos(fromIndex, toIndex) {
     todoArray[fromIndex],
   ];
   displayTodo(todoArray);
-  saveToLocalStorage(todoArray)
+  saveToLocalStorage(todoArray);
 }
 
 function changeTheme(e) {
@@ -225,6 +228,7 @@ function changeTheme(e) {
       "images/icon-moon.svg"
     );
     lightModeTag.setAttribute("href", "lightMode.css");
+    localStorage.setItem("theme", "images/icon-moon.svg");
   } else if (
     e.currentTarget.firstElementChild.getAttribute("src") ===
     "images/icon-moon.svg"
@@ -234,11 +238,12 @@ function changeTheme(e) {
       "images/icon-sun.svg"
     );
     lightModeTag.removeAttribute("href", "lightMode.css");
+    localStorage.setItem("theme", "images/icon-sun.svg");
   }
 }
 
-function saveToLocalStorage(todo){
-localStorage.setItem('todos',JSON.stringify(todo))
+function saveToLocalStorage(todo) {
+  localStorage.setItem("todos", JSON.stringify(todo));
 }
 // application functionality [event listeners]
 window.addEventListener("resize", initializeFilterDiv);
@@ -255,15 +260,12 @@ clearCompleteBtn.addEventListener("click", clearCompleted);
 filterBtns.forEach((element) => {
   element.addEventListener("click", filterTodo);
 });
-filterBtnsLargeScreens.forEach((element) => {
-  element.addEventListener("click", filterTodo);
-});
-themeSwitcherBtn.addEventListener("click", changeTheme);
 
+themeSwitcherBtn.addEventListener("click", changeTheme);
 
 function init() {
   todoInputEl.focus();
-  displayTodo(todoArray)
+  displayTodo(todoArray);
 }
 
 init();
