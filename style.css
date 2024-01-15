@@ -39,12 +39,6 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 26.3%;
 }
-.container {
-  max-width: 550px;
-  margin: 0 auto;
-  position: relative;
-  left: 10px;
-}
 
 header {
   display: flex;
@@ -275,8 +269,10 @@ input[type="checkbox"]:checked::after {
 
 @media (min-width: 768px) {
   .container {
-    /* position: relative;
-    left: 10px; */
+    max-width: 550px;
+    margin: 0 auto;
+    position: relative;
+    left: 10px;
   }
   body {
     background-color: var(--Very-Dark-Blue);

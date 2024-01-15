@@ -1,5 +1,5 @@
 body {
-  background-color: #fafafa;
+  background-color: var(--Light-Grayish-Blue);
 }
 
 form {
@@ -29,11 +29,19 @@ input[type="checkbox"]::after {
 
 .drag-drop-div {
   color: #bcbcc3;
-
-  background-color: #fafafa;
+  background-color: var(--Light-Grayish-Blue);
 }
 
 .status-div__middle-div--flex button:hover,
 .status-div button:hover {
   color: #3a3d50;
+}
+
+.status-div__middle-div {
+  color: #bcbcc3;
+  background-color: var(--Very-Light-Gray);
+}
+
+input#todo {
+  color: var(--Dark-Grayish-Blue);
 }
